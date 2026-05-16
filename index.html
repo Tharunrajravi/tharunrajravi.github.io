@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharunraj R | DevOps & Cloud Specialist</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                text-align: left;
+                padding: 50px;
+                gap: 40px;
+            }
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .profile-img {
+                margin-bottom: 0;
+            }
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .header-info h2 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .contact-links {
+                justify-content: flex-start;
+            }
+        }
+
+        .contact-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Grid Layout for Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            position: relative;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        /* Sidebar Elements */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-category h4 {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .education-item, .cert-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item p, .cert-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content Elements */
+        .summary-text {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .project-card h4 {
+            color: var(--text-main);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .project-card ul {
+            list-style-type: none;
+        }
+
+        .project-card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .project-card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="Tharunraj.png" alt="Tharunraj R" class="profile-img">
+            <div class="header-info">
+                <h1>Tharunraj R</h1>
+                <h2>DevOps Engineer | Cloud & Linux Specialist</h2>
+                <div class="contact-links">
+                    <a href="mailto:tharunrajravi440@gmail.com">📧 tharunrajravi440@gmail.com</a>
+                    <a href="tel:+919597756523">📱 +91-95977 56523</a>
+                    <a href="https://linkedin.com/in/tharunrajravi" target="_blank">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tharunrajravi" target="_blank">💻 GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            
+            <div class="left-column" style="display: flex; flex-direction: column; gap: 30px;">
+                <section>
+                    <h3>Technical Skills</h3>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>Cloud Platforms</h4>
+                            <div class="tags">
+                                <span class="tag">AWS (EC2, EKS, VPC, S3)</span>
+                                <span class="tag">CloudFormation</span>
+                                <span class="tag">IAM</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Containerization</h4>
+                            <div class="tags">
+                                <span class="tag">Docker</span>
+                                <span class="tag">Kubernetes (EKS)</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>CI/CD & IaC</h4>
+                            <div class="tags">
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">Terraform</span>
+                                <span class="tag">GitHub Webhooks</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Monitoring</h4>
+                            <div class="tags">
+                                <span class="tag">Prometheus</span>
+                                <span class="tag">Grafana</span>
+                                <span class="tag">AlertManager</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>OS & Scripting</h4>
+                            <div class="tags">
+                                <span class="tag">Linux/Ubuntu</span>
+                                <span class="tag">Bash Scripting</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">YAML</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4 style="color: var(--text-main); font-size: 1rem;">B.Tech - Computer Science and Business Systems</h4>
+                        <p style="color: var(--accent-color); margin: 2px 0;">Vel Tech Multi Tech College</p>
+                        <p>Graduated: 2025 | CGPA: 8.25/10</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Certifications</h3>
+                    <div class="cert-item">
+                        <h4 style="color: var(--text-main); font-size: 1rem;">DEVOPS Program</h4>
+                        <p>GUVI (HCL Technologies)</p>
+                    </div>
+                    <div class="cert-item" style="margin-top: 15px;">
+                        <h4 style="color: var(--text-main); font-size: 1rem;">Data Science Professional Certificate</h4>
+                        <p>IBM (Coursera)</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column" style="display: flex; flex-direction: column; gap: 30px;">
+                <section>
+                    <h3>Professional Summary</h3>
+                    <p class="summary-text">
+                        Results-driven B.Tech graduate with hands-on expertise in DevOps, cloud infrastructure, and Linux administration. 
+                        Demonstrated proficiency in automating CI/CD pipelines with Jenkins, containerizing applications with Docker, 
+                        and orchestrating platforms with Kubernetes on AWS.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Featured Projects</h3>
+                    
+                    <div class="project-card">
+                        <h4>Trendify E-Commerce Pipeline</h4>
+                        <p class="project-tech">Terraform | AWS EKS | Docker | Jenkins | Prometheus | Grafana</p>
+                        <ul>
+                            <li>Automated AWS infrastructure provisioning using Terraform (VPC, EC2, Elastic IPs).</li>
+                            <li>Built optimized Docker images with Nginx and managed centralized storage on DockerHub.</li>
+                            <li>Provisioned Amazon EKS clusters and deployed applications using Kubernetes manifests.</li>
+                            <li>Configured a multi-stage Jenkins CI/CD pipeline triggered automatically via GitHub Webhooks.</li>
+                            <li>Implemented real-time monitoring utilizing Prometheus metrics and Grafana dashboards with proactive AlertManager email updates.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card" style="margin-bottom: 0;">
+                        <h4>Automated Online Shop Application</h4>
+                        <p class="project-tech">AWS EC2 | Jenkins | Docker | Bash | Prometheus | AlertManager</p>
+                        <ul>
+                            <li>Configured AWS EC2 instances with security hardening and secure SSH access parameters.</li>
+                            <li>Created custom automated bash scripts for robust container lifecycle management and image builds.</li>
+                            <li>Established a 5-stage automated Jenkins pipeline achieving a 100% successful execution rate.</li>
+                            <li>Integrated end-to-end webhook workflows from push events directly into production deployment.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>© 2026 Tharunraj R. Open for opportunities in Bangalore, Chennai, or Remote.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
