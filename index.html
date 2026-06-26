@@ -353,7 +353,7 @@
                         </ul>
                     </div>
 
-                    <div class="project-card" style="margin-bottom: 0;">
+                    <div class="project-card">
                         <h4>Automated Online Shop Application</h4>
                         <p class="project-tech">AWS EC2 | Jenkins | Docker | Bash | Prometheus | AlertManager</p>
                         <ul>
@@ -361,6 +361,18 @@
                             <li>Created custom automated bash scripts for robust container lifecycle management and image builds.</li>
                             <li>Established a 5-stage automated Jenkins pipeline achieving a 100% successful execution rate.</li>
                             <li>Integrated end-to-end webhook workflows from push events directly into production deployment.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card" style="margin-bottom: 0;">
+                        <h4>Personal Knowledge Vault — Cloud-Native Knowledge Management Platform</h4>
+                        <p class="project-tech">AWS ECS Fargate | RDS PostgreSQL | ElastiCache Redis | ALB | CloudFront | S3 | IAM | FastAPI | React (Vite + Tailwind) | GitHub Actions</p>
+                        <ul>
+                            <li>Architected a fully serverless, cloud-native app on AWS ap-south-1; deployed FastAPI backend on ECS Fargate with auto-scaling task definitions — no server management required.</li>
+                            <li>Provisioned RDS PostgreSQL for relational storage and ElastiCache Redis for session caching; secured inter-service communication via private VPC subnets and security groups.</li>
+                            <li>Configured ALB for backend traffic routing and CloudFront CDN for global React frontend delivery via S3 static hosting, achieving low-latency access and high availability.</li>
+                            <li>Implemented IAM roles with least-privilege access policies between ECS, RDS, and ElastiCache; enforced network isolation using security group rules and private subnet routing.</li>
+                            <li>Built end-to-end GitHub Actions CI/CD pipeline — automated Docker image builds, ECR push, and ECS rolling service updates on every commit with zero-downtime deployments.</li>
                         </ul>
                     </div>
                 </section>
